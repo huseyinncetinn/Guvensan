@@ -1,0 +1,46 @@
+{% extends "main.html" %}
+{% load static %}
+{% load i18n %}
+
+
+
+
+{% block content %}
+<style>
+     .footer{
+         margin-top: 400px;
+     }
+     </style>
+<div class="container">
+
+     {% if urunler.all.count < 1 %}
+      <h1 class="text-center mt-5">Aradığınız kriterde ürün bulunmamaktadır.</h1>
+     {% else %}
+     <div class="row row-cols-2 row-cols-sm-2 row-cols-lg-3 row-cols-xl-4">
+          {% for urun in urunler  %}
+          <div class="col kategori-col ">
+                 <div class="shell">
+                      <div class="wsk-cp-product">
+                              <div class="wsk-cp-img">
+                                <img src="{{ urun.urunResim.url }}" alt="Product" class="img-responsive" />
+                              </div>
+                              <div class="wsk-cp-text">
+                                               <div class="category">
+                                                    <a class="text-white" href="{% url 'urundetay' urun.slug %}">{% trans 'Ürün Detay' %}</a>
+                                               </div>
+                                               <div class="title-product">
+                                               <h3> {{ urun.urunKodu }} </h3>
+                                     </div>
+                              </div>
+                      </div>
+                 </div>
+            </div>
+          {% endfor %}
+            
+     </div>
+     {% endif %}
+
+</div>
+
+
+{% endblock content %}

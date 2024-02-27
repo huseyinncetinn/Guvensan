@@ -1,0 +1,78 @@
+{% load static %}
+{% load i18n %}
+
+
+<div class="footer-div">
+  <div class="container">
+    <div class="row row-cols-1 row-cols-sm-1 row-cols-lg-2 row-cols-xl-4">
+
+      <div class="col col1">
+
+       <img src="{% static 'image/logo1.png' %}" alt="">
+       <p class="mt-5"> {% trans 'İç kapıda sektörün önde gelen kuruluşu' %}</p>
+      <hr>
+      </div>
+      
+
+      <div class="col col2">
+       
+       <ul>
+        <h4 > {% trans 'Ürünlerimiz' %} </h4>
+         {% for kategori in kategoriler %}
+           <li><a href="{% url 'kategori' kategori.slug %}"> {{ kategori.isim }} </a></li>
+         {% endfor %}
+       </ul>
+       <hr>
+      </div>
+
+      <div class="col col3">
+        Tosya O.S.B. Yavuz Selim Mah. Merkez Sokak
+        No:91/1 Tosya - KASTAMONU  <br>
+            <i class="fa-solid fa-phone"></i> 0 (366) 313 12 50 <i class="fa-solid fa-phone"></i> 0366 313 71 71
+            <hr>
+      </div>
+
+      <div class="col col4">
+          <h3> {% trans 'Sosyal Medya Hesaplarımız' %}</h3>
+          <h6>{% blocktrans %}Güncel ürünler ve karılmaycak kampanyalar için sosyal medya hesaplarımızı takip edebilirsiniz.{% endblocktrans %}</h6>
+          <a href="https://www.facebook.com/guvensandoor/" target="_blank"><i class="fa fa-facebook"></i></a>
+          <a href="https://www.instagram.com/guvensankapi/" target="_blank" ><i class="fa fa-instagram"></i></a>
+      </div>
+
+
+    </div>
+    <div class="footer-alt mt-5 text-center">
+      <a class="" href=""><img src="{% static 'image/kent.png' %}" alt=""><strong> KENT REKLAM</strong> </a> - Her hakkı saklıdır.
+    </div>
+  </div>
+
+</div>
+
+
+<!-- <footer>
+        <div class="footer">
+            <div class="row1">
+                <h3> {% trans 'Sosyal Medya Hesaplarımız' %}</h3>
+                <h6>{% blocktrans %}Güncel ürünler ve karılmaycak kampanyalar için sosyal medya hesaplarımızı takip edebilirsiniz.{% endblocktrans %}</h6>
+                <a href="https://www.facebook.com/guvensandoor/" target="_blank"><i class="fa fa-facebook"></i></a>
+                <a href="https://www.instagram.com/guvensankapi/" target="_blank" ><i class="fa fa-instagram"></i></a>
+            </div>
+
+            <div class="row1">
+                <ul>
+                  {% for kategori in kategoriler %}
+                    <li><a href="{% url 'kategori' kategori.slug %}"> {{ kategori.isim }} </a></li>
+                  {% endfor %}
+                </ul>
+            </div>
+
+            <div class="row1">
+                Yavuz Selim Mh. İpekyolu Cd.No:51 Organize Sanayi Bölgesi TOSYA/KASTAMONU <br>
+                <i class="fa-solid fa-phone"></i> 0 (366) 313 12 50 <i class="fa-solid fa-phone"></i> 0366 313 71 71
+            </div>  
+
+            <div class="row1">
+                    <a href=""><img src="{% static 'image/kent.png' %}" alt=""><strong>KENT REKLAM</strong> </a> - Her hakkı saklıdır.
+            </div>
+</div>
+</footer> -->
